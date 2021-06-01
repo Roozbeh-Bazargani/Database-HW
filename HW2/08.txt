@@ -1,0 +1,6 @@
+SELECT SUM(ticket_price)
+FROM Playedin AS P JOIN Attended AS A on p.id=A.Playedin_id
+WHERE P.cinema_id IN (
+    SELECT cinema_id
+    From Cinema
+    WHERE name="Ghods")

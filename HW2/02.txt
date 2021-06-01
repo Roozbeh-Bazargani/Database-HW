@@ -1,0 +1,8 @@
+SELECT name
+FROM Cinema
+WHERE cinema_id IN (
+    SELECT cinema_id
+    FROM Playedin
+    GROUP BY cinema_id
+    HAVING min(ticket_price) >= 30)
+ORDER BY name

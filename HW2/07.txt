@@ -1,0 +1,10 @@
+SELECT first_name, last_name
+FROM Actor
+WHERE actor_id IN (
+    SELECT actor_id
+    FROM Actedin
+    WHERE movie_id IN (
+        SELECT movie_id
+        FROM Movie
+        WHERE genre="Comedy"))
+ORDER BY last_name, first_name

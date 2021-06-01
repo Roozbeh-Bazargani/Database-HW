@@ -1,0 +1,6 @@
+SELECT MAX(ticket_price)
+FROM Playedin
+WHERE cinema_id IN (
+    SELECT cinema_id
+    From Cinema
+    WHERE name="Esteghlal")
